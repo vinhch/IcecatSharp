@@ -5,12 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Infrastructure\**" />
-    <EmbeddedResource Remove="Infrastructure\**" />
-    <None Remove="Infrastructure\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
   </ItemGroup>
 

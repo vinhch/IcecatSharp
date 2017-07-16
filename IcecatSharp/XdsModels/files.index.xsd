@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="ICECAT-interface" type="body" />
+
+	<xs:complexType name="body">
+		<xs:all>
+		<xs:element name="files.index" type="files.index" />
+		</xs:all>
+	</xs:complexType>
+
+	<xs:complexType name="files.index">
+		<xs:sequence>
+		<xs:element name="file" type="file" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="Generated" type="xs:integer" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="file">
+	<xs:sequence>
+		<xs:element name="Country_Markets" type="Country_Markets" minOccurs="0" maxOccurs="1" />
+		<xs:element name="Distributors" type="Distributors" minOccurs="0" maxOccurs="1" />
+		<xs:element name="EAN_UPCS" type="EAN_UPCS" minOccurs="0" maxOccurs="1" />
+		<xs:element name="M_Prod_ID" minOccurs="0" maxOccurs="unbounded" >
+		  <xs:complexType>
+			 <xs:simpleContent>
+			    <xs:extension base="xs:string">
+					<xs:attribute name="Supplier_id" type="xs:string" use="optional" />
+					<xs:attribute name="Supplier_name" type="xs:string" use="optional" />
+				</xs:extension>
+			</xs:simpleContent>
+		 </xs:complexType>
+		</xs:element>
+	</xs:sequence>
+		<xs:attribute name="path" type="xs:anyURI" use="required" />
+		<xs:attribute name="Product_ID" type="xs:integer" use="required" />
+		<xs:attribute name="Updated" type="xs:string" use="required" />
+		<xs:attribute name="Date_Added" type="xs:string" use="optional" />
+		<xs:attribute name="Quality" type="xs:string" use="required" />
+		<xs:attribute name="Supplier_id" type="xs:integer" use="required" />
+		<xs:attribute name="Prod_ID" type="xs:string" use="required" />
+		<xs:attribute name="Catid" type="xs:integer" use="required" />
+		<xs:attribute name="On_Market" type="xs:boolean" use="required" />
+		<xs:attribute name="Stock" type="xs:integer" />
+		<xs:attribute name="Model_Name" type="xs:string" use="required" />
+		<xs:attribute name="Product_View" type="xs:integer" use="required" />
+		<xs:attribute name="HighPic" type="xs:string" />
+		<xs:attribute name="HighPicSize" type="xs:integer" />
+		<xs:attribute name="HighPicWidth" type="xs:integer" />
+		<xs:attribute name="HighPicHeight" type="xs:integer" />
+		<xs:attribute name="Distributor_Info_Updated" type="xs:integer" />
+	</xs:complexType>
+
+	<xs:complexType name="EAN_UPCS">
+		<xs:sequence>
+			<xs:element name="EAN_UPC" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="Value" type="xs:string" use="required" />
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Country_Markets">
+		<xs:sequence>
+			<xs:element name="Country_Market" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="Value" type="xs:string" use="required" />
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Distributors">
+		<xs:sequence>
+			<xs:element name="Distributor" type="Distributor" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Distributor">
+		<xs:attribute name="ID" type="xs:integer" />
+		<xs:attribute name="Name" type="xs:string" />
+		<xs:attribute name="Country" type="xs:string" />
+		<xs:attribute name="ProdlevId" type="xs:string" />
+		<xs:attribute name="Stock" type="xs:string" />
+		<xs:attribute name="Updated" type="xs:string" />
+		<xs:attribute name="EAN_UPC" type="xs:string" />
+	</xs:complexType>
+</xs:schema>
