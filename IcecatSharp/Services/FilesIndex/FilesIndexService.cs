@@ -19,7 +19,7 @@ namespace IcecatSharp.Services
 
             var gzipFilePath = await RequestEngine.DownloadFileAsync(req, XmlFileUrl, _AccessConfig.DownloadDirectory);
 
-            var unzipFilePath = GZipUtils.Decompress(new FileInfo(gzipFilePath));
+            var unzipFilePath = await GZipUtils.DecompressAsync(new FileInfo(gzipFilePath));
 
             return unzipFilePath;
         }

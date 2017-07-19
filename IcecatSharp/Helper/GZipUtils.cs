@@ -1,21 +1,22 @@
 ﻿using System.IO;
 using System.IO.Compression;
+using System.Threading.Tasks;
 
 namespace IcecatSharp
 {
     public static class GZipUtils
     {
-        public static string Decompress(FileInfo fileToDecompress, string newFileName = null)
+        public static async Task<string> DecompressAsync(FileInfo fileToDecompress, string newFileName = null)
         {
             var currentFileName = fileToDecompress.FullName;
             if (string.IsNullOrEmpty(newFileName))
                 newFileName = currentFileName.Remove(currentFileName.Length - fileToDecompress.Extension.Length);
 
-            using (FileStream originalFileStream = fileToDecompress.OpenRead())
-            using (FileStream decompressedFileStream = File.Create(newFileName))
-            using (GZipStream decompressionStream = new GZipStream(originalFileStream, CompressionMode.Decompress))
+            using (var originalFileStream = fileToDecompress.OpenRead())
+            using (var decompressedFileStream = File.Create(newFileName))
+            using (var decompressionStream = new GZipStream(originalFileStream, CompressionMode.Decompress))
             {
-                decompressionStream.CopyTo(decompressedFileStream);
+                await decompressionStream.CopyToAsync(decompressedFileStream);
                 //Console.WriteLine("Decompressed: {0}", fileToDecompress.Name);
             }
 
