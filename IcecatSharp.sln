@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IcecatSharp", "src\IcecatSharp\IcecatSharp.csproj", "{85222210-9EC5-43CB-9B28-99934A9850AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IcecatSharp.Tests", "test\IcecatSharp.Tests\IcecatSharp.Tests.csproj", "{1CDF8B5E-FFF3-4D36-8C21-E37608F17B72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{85222210-9EC5-43CB-9B28-99934A9850AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85222210-9EC5-43CB-9B28-99934A9850AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85222210-9EC5-43CB-9B28-99934A9850AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CDF8B5E-FFF3-4D36-8C21-E37608F17B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CDF8B5E-FFF3-4D36-8C21-E37608F17B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CDF8B5E-FFF3-4D36-8C21-E37608F17B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CDF8B5E-FFF3-4D36-8C21-E37608F17B72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
