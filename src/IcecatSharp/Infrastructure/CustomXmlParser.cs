@@ -15,7 +15,7 @@ namespace IcecatSharp.Infrastructure
             MaxCharactersFromEntities = 10240
         };
 
-        public static async Task<string> Parse(string nodeName, string xmlString)
+        public static async Task<string> ParseAsyc(string nodeName, string xmlString)
         {
             using (var stringReader = new StringReader(xmlString))
             using (var xmlReader = XmlReader.Create(stringReader, CustomXmlReaderSetting))
