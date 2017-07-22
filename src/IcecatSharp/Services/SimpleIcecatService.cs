@@ -49,7 +49,7 @@ namespace IcecatSharp.Services
 
             if (string.IsNullOrEmpty(nodeName)) return xmlBody;
 
-            return await CustomXmlParser.ParseAsyc(nodeName, xmlBody);
+            return await CustomXmlParser.ParseAsync(nodeName, xmlBody);
         }
     }
 }
