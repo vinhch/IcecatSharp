@@ -7,6 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IcecatSharp", "src\IcecatSh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IcecatSharp.Tests", "test\IcecatSharp.Tests\IcecatSharp.Tests.csproj", "{1CDF8B5E-FFF3-4D36-8C21-E37608F17B72}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1D91A1E2-22E1-4BE8-AAC9-4DC9205E99B0}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{00A62E20-1CBF-41F5-B0D4-560CA30BA5D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{725D56BD-B222-4503-A6C5-F93B576B1A68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +35,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{85222210-9EC5-43CB-9B28-99934A9850AA} = {00A62E20-1CBF-41F5-B0D4-560CA30BA5D5}
+		{1CDF8B5E-FFF3-4D36-8C21-E37608F17B72} = {725D56BD-B222-4503-A6C5-F93B576B1A68}
 	EndGlobalSection
 EndGlobal
